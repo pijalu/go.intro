@@ -5,11 +5,11 @@ type livingOrganism struct {
 }
 
 type cat struct {
-	root     livingOrganism
+	livingOrganism
 	sizeInCm int
 }
 
 type spider struct {
-	root             livingOrganism
+	livingOrganism
 	sizeInMillimiter int
 }

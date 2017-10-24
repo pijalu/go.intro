@@ -2,24 +2,24 @@ package main
 
 import "fmt"
 
-func printCutableAndSizable(name string, l livingOrganism, o sizable) {
+func printCutableAndSizable(name string, i cutableSizable) {
 	fmt.Printf("%s: cute: %t - size in millimiters: %d\n",
 		name,
-		l.isCute(),
-		o.getSizeInMillimiter())
+		i.isCute(),
+		i.getSizeInMillimiter())
 }
 
 func main() {
 	acat := &cat{
-		root:     livingOrganism{cute: true},
-		sizeInCm: 30,
+		livingOrganism: livingOrganism{cute: true},
+		sizeInCm:       30,
 	}
 
 	aspider := &spider{
-		root:             livingOrganism{cute: false},
+		livingOrganism:   livingOrganism{cute: false},
 		sizeInMillimiter: 30,
 	}
 
-	printCutableAndSizable("My cat", acat.root, acat)
-	printCutableAndSizable("Your spider", aspider.root, aspider)
+	printCutableAndSizable("My cat", acat)
+	printCutableAndSizable("Your spider", aspider)
 }
